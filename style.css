@@ -10,4 +10,23 @@ body {
   canvas {
     border: 2px solid #333;
   }
+
+  #controls {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #controls button {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffcc00;
+    cursor: pointer;
+  }
+  
+  #controls button:active {
+    background-color: #ffaa00;
+  }
   
