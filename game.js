@@ -3,19 +3,30 @@ const rightBtn = document.getElementById('rightBtn');
 const jumpBtn = document.getElementById('jumpBtn');
 
 // Sol buton
-leftBtn.addEventListener('touchstart', () => keys['ArrowLeft'] = true);
-leftBtn.addEventListener('touchend', () => keys['ArrowLeft'] = false);
-leftBtn.addEventListener('mousedown', () => keys['ArrowLeft'] = true);
+leftBtn.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  keys['ArrowLeft'] = true;
+});
+leftBtn.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  keys['ArrowLeft'] = false;
+});leftBtn.addEventListener('mousedown', () => keys['ArrowLeft'] = true);
 leftBtn.addEventListener('mouseup', () => keys['ArrowLeft'] = false);
 
 // Sağ buton
-rightBtn.addEventListener('touchstart', () => keys['ArrowRight'] = true);
-rightBtn.addEventListener('touchend', () => keys['ArrowRight'] = false);
-rightBtn.addEventListener('mousedown', () => keys['ArrowRight'] = true);
+rightBtn.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  keys['ArrowRight'] = true;
+});
+rightBtn.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  keys['ArrowRight'] = false;
+});rightBtn.addEventListener('mousedown', () => keys['ArrowRight'] = true);
 rightBtn.addEventListener('mouseup', () => keys['ArrowRight'] = false);
 
 // Zıplama butonu
-jumpBtn.addEventListener('touchstart', () => {
+jumpBtn.addEventListener('touchstart', (e) => {
+  e.preventDefault();
   if (character.onGround) {
     character.vy = -8;
     character.onGround = false;
